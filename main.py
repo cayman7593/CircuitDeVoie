@@ -11,15 +11,15 @@ def extract_ids(df):
     return ids
 
 # Charger les fichiers JSON
-json_data1 = pd.read_json('data\\CircuitDeVoie.json5')
-json_data2 = pd.read_json('data\\extremiteCvd.json5')
+json_data1 = pd.read_json('FichierJson1')
+json_data2 = pd.read_json('FichierJson2')
 
 # Extraire les identifiants 'idGaiaSRVoie' des deux fichiers JSON
 ids_json1 = extract_ids(json_data1)
 ids_json2 = extract_ids(json_data2)
 
 # Charger le fichier CSV avec le bon séparateur
-data = pd.read_csv('data\\Lignes_Voies_18032024to26032024.csv', sep=';')
+data = pd.read_csv('FichierCsv', sep=';')
 
 # Normaliser les identifiants dans le CSV
 idsrvoie_list = data['IdSRVoie'].str.lower().tolist()
